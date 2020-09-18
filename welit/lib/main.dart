@@ -17,7 +17,16 @@ class _MyAppState extends State<MyApp> {
   void onData(int luxValue) async {
     print("Lux value: $luxValue");
     setState(() {
-      _luxString = "$luxValue";
+      if (luxValue < 10)
+        _luxString = "It's as dark as my soul";
+      else if (luxValue < 80)
+        _luxString = "I can almost see your ugly face";
+      else if (luxValue < 2000)
+        _luxString = "Then there was light!";
+      else if (luxValue < 4000)
+        _luxString = "The sun is shining upon you :)";
+      else
+        _luxString = "IT'S TOO DAMN BRIGHT! MY EYES!!!!";
     });
   }
 
@@ -50,10 +59,10 @@ class _MyAppState extends State<MyApp> {
     return new MaterialApp(
       home: new Scaffold(
         appBar: new AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('WeLit'),
         ),
         body: new Center(
-          child: new Text('Running on: $_luxString\n'),
+          child: new Text(_luxString),
         ),
       ),
     );
