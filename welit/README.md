@@ -1,4 +1,4 @@
-# welit
+# bright
 
 A new Flutter application.
 
